@@ -1,2 +1,14 @@
 ---
 # defaults file for ansistrano-magento-deploy
+---
+magento_php_path: php # The PHP executable to use for all command line tasks
+
+magento_composer_path: composer
+magento_composer_options: '--verbose --no-progress --no-interaction'
+
+ # Variables for the Magento deployment
+static_content_locales: [] #Variable
+static_content_jobs: 1 # Also set the number of conccurent jobs to run. The default is 1
+magento_themes: [] # You can also set the themes to run against. By default it'll deploy all themes 
+
+magento_bin_path: 'bin/magento'

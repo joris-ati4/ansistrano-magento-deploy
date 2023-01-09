@@ -1,0 +1,8 @@
+# Symlinks shared paths and files
+- name: Magento 2 | Dump autoload
+  shell: '{{ php_bin }} {{ ansistrano_release_path.stdout }}/bin/magento setup:di:compile'
+  register: compile
+  vars:
+    php_bin: /usr/bin/php7.4
+- debug:
+        msg: "{{compile.stdout}}"

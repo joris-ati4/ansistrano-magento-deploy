@@ -1,0 +1,3 @@
+# Symlinks shared paths and files
+- name: ANSISTRANO | Create var and pub folder
+  shell: cd {{ ansistrano_release_path.stdout }} && mkdir var && mkdir pub && cd pub && mkdir static 2>&1

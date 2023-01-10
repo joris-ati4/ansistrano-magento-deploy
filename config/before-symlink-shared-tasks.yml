@@ -1,3 +1,17 @@
-# Symlinks shared paths and files
-- name: ANSISTRANO | Create var and pub folder
-  shell: cd {{ ansistrano_release_path.stdout }} && mkdir var && mkdir pub && cd pub && mkdir static 2>&1
+- name: Magento | Create var directory if it does not exist
+  ansible.builtin.file:
+    path: '{{ ansistrano_release_path.stdout }}/var'
+    state: directory
+    mode: '0755'
+
+- name: Magento | Create pub directory if it does not exist
+  ansible.builtin.file:
+    path: '{{ ansistrano_release_path.stdout }}/pub'
+    state: directory
+    mode: '0755'
+
+- name: Magento | Create pub/static directory if it does not exist
+  ansible.builtin.file:
+    path: '{{ ansistrano_release_path.stdout }}/pub/static'
+    state: directory
+    mode: '0755'

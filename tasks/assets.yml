@@ -1,12 +1,6 @@
-# Symlinks shared paths and files
+---
 - name: Magento 2 | Assets
-  shell: '{{ php_bin }} {{ ansistrano_release_path.stdout }}/bin/magento setup:static-content:deploy --content-version={{content_version}} {{static_content_locales}} -j {{static_content_jobs}}'
-  register: compile
-  vars:
-    php_bin: /usr/bin/php7.4
-    content_version: 123456789
-    static_content_locales: 'en_US fr_FR'
-    static_content_jobs: 1
+  shell: '{{ magento_php_path }} {{ (ansistrano_release_path.stdout, magento_bin_path) | path_join }} setup:static-content:deploy --content-version={{content_version}} {{ magento_static_content_locales | join(" ") }} -j {{magento_static_content_jobs}}'
+  register: assets
 - debug:
-        msg: "{{compile.stdout}}"
-
+        msg: "{{assets.stdout}}"

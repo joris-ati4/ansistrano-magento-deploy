@@ -1,16 +1,13 @@
-# Symlinks shared paths and files
+---
 - name: Magento 2 | Install the vendors for the project
   community.general.composer:
     command: install
     working_dir: '{{ ansistrano_release_path.stdout }}'
     prefer_dist: true
     optimize_autoloader: true 
-    composer_executable: '{{ composer_bin }}'
-    executable: '{{ php_bin }}'
+    composer_executable: '{{ magento_composer_path }}'
+    executable: '{{ magento_php_path }}'
     arguments: '--verbose --no-progress --no-interaction'
   register: composer
-  vars:
-    composer_bin: /usr/local/bin/composer1
-    php_bin: /usr/bin/php7.4
 - debug:
         msg: "{{composer.stdout}}"

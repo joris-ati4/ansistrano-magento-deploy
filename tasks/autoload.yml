@@ -1,8 +1,6 @@
-# Symlinks shared paths and files
+---
 - name: Magento 2 | Dump autoload
-  shell: cd {{ ansistrano_release_path.stdout }} && {{composer_bin}} dump-autoload -o
+  shell: cd {{ ansistrano_release_path.stdout }} && {{ magento_php_path }} {{magento_composer_path}} dump-autoload -o
   register: autoload
-  vars:
-    composer_bin: /usr/local/bin/composer1
 - debug:
         msg: "{{autoload.stdout}}"

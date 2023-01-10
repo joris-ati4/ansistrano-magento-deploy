@@ -1,0 +1,9 @@
+---
+- name: Magento 2 | Check if current dir exists
+  stat:
+    path: '{{ (ansistrano_deploy_to, ansistrano_current_dir) | path_join }}'
+    register: current_exists
+
+- name: Magento 2 | Maintenance Disable
+  shell: '{{ magento_php_path }} {{ (ansistrano_deploy_to, ansistrano_current_dir) | path_join }} maintenance:disable'
+  when: current_exists | bool

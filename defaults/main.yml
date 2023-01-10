@@ -1,6 +1,4 @@
 ---
-# defaults file for ansistrano-magento-deploy
----
 magento_php_path: php # The PHP executable to use for all command line tasks
 
 magento_composer_path: composer

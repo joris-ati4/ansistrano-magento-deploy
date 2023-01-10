@@ -1,4 +1,3 @@
 ---
-# vars file for ansistrano-magento-deploy
-ansistrano_before_symlink_shared_tasks_file: "../../joris-ati4.ansistrano-magento-deploy/config/before_symlink_shared.yml"
-ansistrano_after_symlink_shared_tasks_file: "../../joris-ati4.ansistrano-magento-deploy/config/after_symlink_shared.yml"
+ansistrano_before_symlink_shared_tasks_file: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/config/before_symlink_shared.yml"
+ansistrano_after_symlink_shared_tasks_file: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/config/after_symlink_shared.yml"

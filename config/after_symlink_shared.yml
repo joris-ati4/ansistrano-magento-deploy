@@ -1,0 +1,49 @@
+---
+
+- include_tasks: "{{ ansistrano_magento_before_vendors_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- import_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/vendors.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_vendors_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_autoload_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/autoload.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_autoload_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_compile_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/compile.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_compile_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_autoload_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/autoload.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_autoload_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_assets_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/assets.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_assets_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_config_import_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/config-import.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_config_import_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_db_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/db-upgrade.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_db_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "{{ ansistrano_magento_before_cache_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"
+
+- include_tasks: "~/.ansible/roles/joris_ati4.ansistrano_magento_deploy/tasks/cache-flush.yml"
+
+- include_tasks: "{{ ansistrano_magento_after_cache_tasks_file | default('~/.ansible/roles/ansistrano.deploy/tasks/empty.yml') }}"

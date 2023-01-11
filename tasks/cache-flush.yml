@@ -1,6 +1,6 @@
 ---
 - name: Magento 2 | Flush Magento cache
-  shell: '{{ (ansistrano_release_path.stdout, magento_bin_path) | path_join }} cache:flush'
+  shell: '{{ magento_php_path }} {{ (ansistrano_release_path.stdout, magento_bin_path) | path_join }} cache:flush'
   register: cache_flush
 - debug:
         msg: "{{cache_flush.stdout}}"

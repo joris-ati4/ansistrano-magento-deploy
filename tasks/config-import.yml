@@ -16,6 +16,7 @@
 
 - debug:
         msg: "{{config_import.stdout}}"
+  when: check_config_import.rc == 2
 
 - import_tasks: "../../joris_ati4.ansistrano_magento_deploy/tasks/maintenance-disable.yml"
   when: check_config_import.rc == 2
